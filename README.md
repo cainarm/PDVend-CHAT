@@ -6,14 +6,14 @@
 ### Instruções
 
 #### Instalação Servidor
-Abra a pasta server e digite os comandos
+Abra a pasta server e digite o comando
 
 ```bash
 $ npm install
 ```
 
 #### Instalação Cliente
-Abra a pasta client e digite os comandos
+Abra a pasta client e digite o comando
 
 ```bash
 $ npm install
