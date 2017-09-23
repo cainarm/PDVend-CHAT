@@ -39,6 +39,9 @@ const style = {
         fontSize: 15,
         fontWeight: 100
     },
+    none: {
+        display: 'none'
+    },
     sendButton: {
         width: 30,
         float: 'right',
@@ -55,7 +58,8 @@ class Container extends React.Component{
         props.getTemperature();
     }
     
-    sendMessage(){
+    sendMessage(e){
+        e.preventDefault();
         if(this.message.value){
             this.props.send(this.message.value);
             this.message.value = "";
@@ -75,10 +79,14 @@ class Container extends React.Component{
                     <ChatDialog messages={messages}/>
 
                     <div style={style.inputContainer}>
-                        <input style={style.input} type="text" placeholder="Digite uma mensagem" ref={input => this.message = input}/>
-                        <span onClick={() => this.sendMessage()}>
-                            <img src="../assets/icons/send.png" style={style.sendButton}/>
-                        </span>
+                        <form onClick={e => this.sendMessage(e)}>
+                            <input style={style.input} type="text" placeholder="Digite uma mensagem" ref={input => this.message = input}/>
+                            <span onClick={e => this.sendMessage(e)}>
+                                <button type="submit" style={style.none}/>
+                                <img src="../assets/icons/send.png" style={style.sendButton}/>
+                            </span>
+                        </form>
+
                     </div>
                 </div>
 

@@ -12,9 +12,9 @@ const RoundImage = props => {
     } = props;
 
     return (
-            <span>
-                <img src={src} style={style ? {...defaultStyle, ...style}: defaultStyle}/>
-            </span>
+        <span>
+            <img src={src} style={style ? {...defaultStyle, ...style}: defaultStyle}/>
+        </span>
     );  
 };
 

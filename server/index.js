@@ -6,6 +6,15 @@ io.on('connection', socket => {
   socket.on('action', message => {
     switch(message.type){
       case "SERVER_SEND_MESSAGE":
+
+        io.emit('action', {
+          type: "ADD_MESSAGE", 
+          payload: {
+            message: message.payload,
+            who: "me"
+          }
+        });
+
         io.emit('action', {
           type: "ADD_MESSAGE", 
           payload: {
@@ -13,6 +22,7 @@ io.on('connection', socket => {
             who: "them"
           }
         });
+        
         break;
     }
   });
