@@ -2,24 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 
-class ChatBaloon extends React.Component{
-    constructor(){
-        super();
-    }
+const ChatBaloon = props => {
+    const {
+        who, 
+        message
+    } = props;
 
-    render(){
-        const {
-            who, 
-            message
-        } = this.props;
-
-        return (
-            <div className={`chat-message ${who}`}>
-                {message || ""}
-            </div>
-        );  
-    }
-}
+    return (
+        <div className={`chat-message ${who}`}>
+            {message || ""}
+        </div>
+    ); 
+};
 
 ChatBaloon.propTypes = {
   who: PropTypes.string.isRequired,

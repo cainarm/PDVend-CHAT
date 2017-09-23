@@ -8,29 +8,24 @@ const style = {
     height: window.innerHeight - 64
 };
 
-class List extends React.Component{
-    constructor(){
-        super();
-    }
+const List = props => {
+    const {
+        elements
+    } = props;
 
-    render(){
-        const {
-            elements
-        } = this.props;
-
-        return (
-            <div style={style} className="trackbar">
-                {
-                    elements.map((element, i) => {
-                        return (
-                            <ListElement key={i} imgSrc={element.img} name={element.name}/>
-                        );
-                    })
-                }        
-            </div>
-        );  
-    }
-}
+    return (
+        <div style={style} className="trackbar">
+            {
+                elements.map((element, i) => {
+                    return (
+                        <ListElement key={i} imgSrc={element.img} name={element.name}/>
+                    );
+                })
+            }        
+        </div>
+    );  
+    
+};
 
 List.propTypes = {
     elements: PropTypes.array.isRequired,

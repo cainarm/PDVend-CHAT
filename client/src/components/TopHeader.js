@@ -20,28 +20,22 @@ const style = {
     }
 };
 
-class TopHeader extends React.Component{
-    constructor(){
-        super();
-    }
+const TopHeader = props => {  
+    const {
+        imgSrc,
+        chatTarget
+    } = props;
+
+    return (
+        <div style={style}>
+            <RoundImage src={imgSrc} style={style.image}/>
+            <span style={style.name}>
+                {chatTarget}
+            </span>
+        </div>
+    );
     
-    render(){
-
-        const {
-            imgSrc,
-            chatTarget
-        } = this.props;
-
-        return (
-            <div style={style}>
-                <RoundImage src={imgSrc} style={style.image}/>
-                <span style={style.name}>
-                    {chatTarget}
-                </span>
-            </div>
-        );
-    }
-}
+};
 
 TopHeader.propTypes = {
   imgSrc: PropTypes.string.isRequired,

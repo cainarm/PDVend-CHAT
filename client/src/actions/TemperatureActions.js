@@ -1,11 +1,10 @@
 import { fahrenheitToCelsius } from '../utils/temperature';
 
-export function getTemperature(){
-    return function(dispatch){
+export const getTemperature = () => {
+    return (dispatch) => {
         fetch("https://query.yahooapis.com/v1/public/yql?q=select item from weather.forecast where woeid in (select woeid from geo.places(1) where text='brasilia, df')&format=json")
-        .then(response => {return response.json()})
+        .then(response => response.json())
         .then(json => {
-            console.log(json);
             dispatch({
                 type: "ADD_MESSAGE",
                 payload: {
@@ -13,7 +12,7 @@ export function getTemperature(){
                     who: "them"
                 },
             });
-        })
-    }
+        });
+    };
 
 }

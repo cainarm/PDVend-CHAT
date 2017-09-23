@@ -22,41 +22,36 @@ const style = {
     },
 };
 
-class ChatContainer extends React.Component{
-    constructor(){
-        super();
-    }
-    
-    render(){
-        const {
-            messages 
-        } = this.props;
+const ChatContainer = props => {
+    const {
+        messages 
+    } = props;
 
-        return (
-            <div style={style.container}>
-                <div style={style.messages} className="trackbar">
-                    <ReactCSSTransitionGroup
-                        transitionName="enterIn"
-                        transitionEnterTimeout={300}
-                        transitionLeaveTimeout={300}
-                    >
-                    {
-                        messages.map((element, i) => {
-                            return (
-                                <ChatBaloon 
-                                    key={element.message + "-" + i} 
-                                    message={element.message} 
-                                    who={element.who} 
-                                />
-                            );
-                        })
-                    }
-                    </ReactCSSTransitionGroup>
-                </div>
+    return (
+        <div style={style.container}>
+            <div style={style.messages} className="trackbar">
+                <ReactCSSTransitionGroup
+                    transitionName="enterIn"
+                    transitionEnterTimeout={300}
+                    transitionLeaveTimeout={300}
+                >
+                {
+                    messages.map((element, i) => {
+                        return (
+                            <ChatBaloon 
+                                key={element.message + "-" + i} 
+                                message={element.message} 
+                                who={element.who} 
+                            />
+                        );
+                    })
+                }
+                </ReactCSSTransitionGroup>
             </div>
-        );
-    }
-}
+        </div>
+    );
+
+};
 
 ChatContainer.propTypes = {
   messages: PropTypes.array.isRequired,

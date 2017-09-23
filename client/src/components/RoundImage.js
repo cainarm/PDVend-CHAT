@@ -3,26 +3,20 @@ import PropTypes from 'prop-types';
 
 const defaultStyle = {
     borderRadius: 400,
-}
+};
 
-class RoundImage extends React.Component{
-    constructor(){
-        super();
-    }
+const RoundImage = props => {
+    const {
+        src,
+        style
+    } = props;
 
-    render(){
-        const {
-            src,
-            style
-        } = this.props;
-
-        return (
+    return (
             <span>
                 <img src={src} style={style ? {...defaultStyle, ...style}: defaultStyle}/>
             </span>
-        );  
-    }
-}
+    );  
+};
 
 RoundImage.propTypes = {
   src: PropTypes.string.isRequired,

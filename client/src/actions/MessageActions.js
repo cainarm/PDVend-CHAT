@@ -1,5 +1,5 @@
-export function sendMessage(message){
-    return function(dispatch){
+export const sendMessage = message => {
+    return (dispatch) => {
         dispatch({
             type: "SERVER_SEND_MESSAGE",
             payload: message
@@ -10,6 +10,6 @@ export function sendMessage(message){
                 message: message,
                 who: "me"
             }
-        })
-    }
+        });
+    };
 }

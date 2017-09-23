@@ -7,31 +7,26 @@ const style = {
     leftBar: {
         borderRight: '1px solid #ccc'
     }
-}
+};
 
-class LeftBar extends React.Component{
-    constructor(){
-        super();
-    }
+const LeftBar = props =>{
+    const {
+        userImg,
+        users
+    } = props;
 
-    render(){
-        const {
-            userImg,
-            users
-        } = this.props;
-
-        return (
-            <div style={style.leftBar}>
-                <TopBar imgSrc={userImg}/>
-                <div>
-                    <List 
-                        elements={users}
-                    />
-                </div>
+    return (
+        <div style={style.leftBar}>
+            <TopBar imgSrc={userImg}/>
+            <div>
+                <List 
+                    elements={users}
+                />
             </div>
-        );  
-    }
-}
+        </div>
+    );  
+    
+};
 
 LeftBar.propTypes = {
     userImg: PropTypes.string.isRequired,

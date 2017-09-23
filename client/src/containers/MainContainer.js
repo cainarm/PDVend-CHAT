@@ -76,7 +76,7 @@ class Container extends React.Component{
 
                     <div style={style.inputContainer}>
                         <input style={style.input} type="text" placeholder="Digite uma mensagem" ref={input => this.message = input}/>
-                        <span onClick={() => this.sendMessage() }>
+                        <span onClick={() => this.sendMessage()}>
                             <img src="../assets/icons/send.png" style={style.sendButton}/>
                         </span>
                     </div>
@@ -90,7 +90,7 @@ class Container extends React.Component{
 let mapStateToProps = (state) => {
     return {
         messages: state.messages 
-    }
+    };
 };
 
 let mapDispatchToProps = (dispatch) => {
@@ -101,7 +101,7 @@ let mapDispatchToProps = (dispatch) => {
         send: (message) => {
             dispatch(sendMessage(message));
         }
-    }
+    };
 };
 
 

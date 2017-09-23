@@ -30,28 +30,21 @@ const style = {
     }
 };
 
-class ListElement extends React.Component{
-    constructor(){
-        super();
-    }
-    
-    render(){
+const ListElement  = props => {
+    const {
+        imgSrc,
+        name
+    } = props;
 
-        const {
-            imgSrc,
-            name
-        } = this.props;
-
-        return (
-            <div style={style}>
-                <RoundImage src={imgSrc} style={style.image}/>
-                <span style={style.name}>
-                    {name}
-                </span>
-            </div>
-        );
-    }
-}
+    return (
+        <div style={style}>
+            <RoundImage src={imgSrc} style={style.image}/>
+            <span style={style.name}>
+                {name}
+            </span>
+        </div>
+    );
+};
 
 ListElement.propTypes = {
   imgSrc: PropTypes.string.isRequired,
