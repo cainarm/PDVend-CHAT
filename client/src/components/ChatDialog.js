@@ -8,13 +8,14 @@ import '../assets/css/customScrollbar.css';
 const style = {
     container: {
         width: '100%',
+        height: 'calc(100% - 110px)',
         backgroundColor: "#FAFAFA",
     },
     messages: {
         position: 'relative',
         overflowY: 'scroll',
         overflowX: 'hidden',
-        height: window.innerHeight - 116,
+        height: '100%',
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 6,

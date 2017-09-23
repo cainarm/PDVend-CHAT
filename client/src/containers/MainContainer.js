@@ -4,21 +4,16 @@ import TopHeader from '../components/TopHeader';
 import ChatDialog from '../components/ChatDialog';
 import { getTemperature } from '../actions/TemperatureActions';
 import { sendMessage } from '../actions/MessageActions';
-
-let wd = window.innerWidth < 1100 ? "0px" : "340px";  
+import PropTypes from 'prop-types';
 
 const style = {
     container: {
         width: '100%',
-        height: 'auto',
-    },
-    leftBarContainer: {
-        width: wd,
-        position: "relative",
-        float: "left"
+        height: '100%',
     },
     main: {
-        width: `100%`, 
+        width: `100%`,
+        height: '100%', 
         float: "right"
     },
     inputContainer: {
@@ -112,6 +107,10 @@ let mapDispatchToProps = (dispatch) => {
     };
 };
 
-
+Container.propTypes = {
+  getTemperature: PropTypes.func,
+  messages: PropTypes.array,
+  send: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Container);
