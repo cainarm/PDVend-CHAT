@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TopHeader from '../components/TopHeader';
 import ChatDialog from '../components/ChatDialog';
-import  LeftBar from '../components/LeftBar';
 import { getTemperature } from '../actions/TemperatureActions';
 import { sendMessage } from '../actions/MessageActions';
 
@@ -19,7 +18,7 @@ const style = {
         float: "left"
     },
     main: {
-        width: `calc(100% - ${wd})`, 
+        width: `100%`, 
         float: "right"
     },
     inputContainer: {
@@ -68,12 +67,6 @@ class Container extends React.Component{
 
         return(
             <div style={style.container}>
-                <div style={style.leftBarContainer}>
-                    <LeftBar 
-                        userImg="../assets/img/user.png"
-                        users={Array(15).fill({name: "BOT", img: "../assets/img/user1.png"})}
-                    /> 
-                </div>
                 <div style={style.main}>
                     <TopHeader 
                         imgSrc="../assets/img/logo.png" 
